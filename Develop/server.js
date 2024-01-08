@@ -12,8 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: true }).then(function () {
+sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
   });
 });
+
+//base url
+/// url for insomnia ie fetch begins in this file with : "http://localhost:3001/"

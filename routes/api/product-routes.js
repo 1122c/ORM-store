@@ -107,10 +107,10 @@ router
 
     return res.json(product);
   })
-  .catch((err) => {
+  // .catch((err) => {
     // console.log(err);
-    res.status(400).json(err);
-  });
+  //   res.status(400).json(err);
+  // });
 
 router.delete("/:id", (req, res) => {
   // delete one product by its `id` value

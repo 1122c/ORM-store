@@ -11,21 +11,27 @@ Backend database for e-commerce store using APIs, utilizing express.js and Seque
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
-- [Database](#database)
 
 
 ## Installation
 
-Requires Insomnia to test API endpoints.
+1. Clone repository
+2. Open in VSCode or chosen IDE.
+3. Open terminal from appropriate directory.
+4. Run command "npm i"
+
 
 ## Usage
 
 Demos the backend database of a ficticious e-commerce store.
+1. Using MySQL shell, source schema.sql and exit shell.
+2. In terminal, run command "npm run seed" to populate database.
+3. Run "npm start" command.
+4. In insomnia application, use http request interface to test CRUD routes.
 
 ## License
 
-For demonstration purposes only.
+No license. For demonstration purposes only.
 
 ## Contributing
 
@@ -35,122 +41,11 @@ For demonstration purposes only.
 
 ## Tests
 
-Insomnia used for APIs.
-
-## Questions
+Requires Insomnia to test express API endpoints for CRUD functionality on database tables.
 
 
-### Database Models
-
-Database contains the following four models, including the requirements listed for each model:
-
-* `Category`
-
-  * `id`
-
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
-
-  * `category_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
-
-* `Product`
-
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
-
-  * `product_name`
-  
-    * String.
-  
-    * Doesn't allow null values.
-
-  * `price`
-  
-    * Decimal.
-  
-    * Doesn't allow null values.
-  
-    * Validates that the value is a decimal.
-
-  * `stock`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set a default value of `10`.
-  
-    * Validates that the value is numeric.
-
-  * `category_id`
-  
-    * Integer.
-  
-    * References the `Category` model's `id`.
-
-* `Tag`
-
-  * `id`
-  
-    * Integer.
-  
-    * Doesn't allow null values.
-  
-    * Set as primary key.
-  
-    * Uses auto increment.
-
-  * `tag_name`
-  
-    * String.
-
-* `ProductTag`
-
-  * `id`
-
-    * Integer.
-
-    * Doesn't allow null values.
-
-    * Set as primary key.
-
-    * Uses auto increment.
-
-  * `product_id`
-
-    * Integer.
-
-    * References the `Product` model's `id`.
-
-  * `tag_id`
-
-    * Integer.
-
-    * References the `Tag` model's `id`.
-
-### Associations
-
-Project demonstrates the following relationships accurately:
-
-* `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
-
-* `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
+## Author
+Rachel Valenzuela
 
 
 
